@@ -12,9 +12,14 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            Button("Add Data") {
-                dataController.deleteAll()
-                try? dataController.createSampleData()
+            VStack {
+                Button("Add Data") {
+                    dataController.deleteAll()
+                    try? dataController.createSampleData()
+                }
+                Button("Just Delete the Data") {
+                    dataController.deleteAll()
+                }
             }
             .navigationTitle("Home")
         }
